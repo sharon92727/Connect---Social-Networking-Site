@@ -1,0 +1,28 @@
+use test;
+delimiter //
+create procedure join_comm(in owner int(11),in name int(11))
+begin
+insert into user_comm(lno,comm_no) values (owner,name);
+end //
+
+create procedure unjoin_comm(in name int(11))
+begin
+delete from user_comm where lno=name;
+end//
+
+
+create procedure user (in name varchar(50))
+begin
+select eid from login where eid=name;
+end //
+
+
+create trigger regis_ins_login after insert `test`.`registration` referencing new as newrow
+begin
+insert into `test`.`login` values(:newrow.lno,:newrow.name,:newrow.password);
+end regis_ins_login;
+
+insert into `test`.`registration1` values (NULL,'$city','$country','$gender','$dob','$eid'
+insert into `test`.`login' values (NULL,'$name','$pwd')
+insert into `test`.`con_info' values ('$user','$eid','$phoneno','$address','$city','$zipcode','$website');			
+insert into `test`.`edu_info' values ('$user','$working','$college','$school');

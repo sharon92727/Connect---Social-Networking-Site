@@ -1,0 +1,126 @@
+<?php
+session_start();
+$username=$_SESSION['name'];
+?>
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Connect</title>
+<meta name="description" content="website description">
+<meta name="keywords" content="website keywords, website keywords">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<!-- stylesheets --><link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/dark.css" rel="stylesheet" type="text/css">
+<!-- modernizr enables HTML5 elements and feature detects --><script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+</head>
+<body>
+  <div id="main">
+
+    <!-- begin header -->
+    <header><div id="logo">
+      <h1>CONNECT</h1></div>
+      <nav width="800px"><ul class="sf-menu" id="nav">
+<li class="selected"><a href="index.html">home</a></li>
+          <li><a href="profile.php">profile</a></li>
+          <li>
+<a href="images.php">photos</a>
+            <ul>
+<li><a href="portfolio_one.html">album1</a></li>
+              <li><a href="portfolio_two.html">album2</a></li>
+            </ul>
+</li>
+          <li><a href="scrapbook.php">scrapbook</a></li>
+          <li><a href="friends.php">friends</a></li>
+          <li><a href="communities.php">communities</a></li>
+          <li><a href="login.php">log out</a></li>
+        </ul></nav></header><!-- end header --><!-- begin content --><div id="site_content">
+      <div id="left_content">
+        <h1>My Profile</h1>
+        <p>&nbsp;</p>
+        <table class="new1" align="left">
+<tr valign="top">
+<td>
+<table align="left" >
+<tr >
+<td>
+<a href="edit_profile.php">
+<div class="four">
+<right><font color="#FFFFFF"> Edit profile </font></right>
+</div>
+</a>
+</td>
+<td>
+<a href ="view_contact_info.php">
+<div class="four">
+<right><font color="#FFFFFF"> Contact info </font></right>
+</div>
+</a>
+</td>
+<td>
+<a href="view_educational_info.php">
+<div class="four">
+<right><font color="#FFFFFF"> Educational info </font></right>
+</div>
+</a>
+</td>
+<td>
+<a href="view_other_info.php">
+<div class="four">
+<right><font color="#FFFFFF"> Other info </font></right>
+</div>
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!--class="new1" align="left"-->
+<tr>
+<td>
+
+<center> // <strong> profile :) </strong> </center>
+</td>
+</tr>
+<!--tr>  <td></td> <td></td>  </tr>
+<tr>  <td></td> <td></td>  </tr-->
+
+
+
+</table>
+
+</font>
+<!--
+<h1><center>  PROFILE  </center></h1> -->
+<!--video src="PranavMistry_2009I.avi" width="320" height="240" autoplay>
+video
+</video-->
+</table>
+      </div>
+      <div id="right_content">
+        <p>&lt;?php<br>
+          <br>
+          mysql_connect('localhost','root','');<br>
+          mysql_select_db(&quot;test&quot;);<br>
+          $id=$_SESSION['id'];<br>
+          $getpic=mysql_query(&quot;SELECT profile_pic FROM po_info where `lno`='$id'&quot;);<br>
+          $row1=mysql_fetch_array($getpic);</p>
+        <p>echo&quot;&lt;image src='$row1[0]' width=\&quot;200\&quot; height=\&quot;200\&quot;&gt;&quot;;<br>
+          ?&gt;</p>
+<!--img style="float: left;" src="images/about.jpg" title="about me" alt="about me"-->
+</div>
+    </div>
+    <!-- end content -->
+
+    <!-- begin footer -->
+    <footer>
+      <p><img src="images/twitter.png" alt="twitter">&nbsp;<img src="images/facebook.png" alt="facebook">&nbsp;<img src="images/rss.png" alt="rss"></p>
+    </footer><!-- end footer -->
+</div>
+  <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript" src="js/jquery.min.js"></script><script type="text/javascript" src="js/jquery.easing-sooper.js"></script><script type="text/javascript" src="js/jquery.sooperfish.js"></script><!-- initialise sooperfish menu --><script type="text/javascript">
+    $(document).ready(function() {
+      $('ul.sf-menu').sooperfish();
+    });
+  </script>
+</body>
+</html>
